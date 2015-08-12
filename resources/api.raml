@@ -1,0 +1,21 @@
+#%RAML 0.8
+title: HelloWorld
+version: v1
+baseUri: http://api.siemens.com/api/v1/metering
+documentation:
+  - title: Introduction
+    content: |
+      Welcome to the HelloWorld API! You can use our API to access say hello to a friend.
+/helloWorld:
+  get:
+    queryParameters:
+      name:
+        type: string
+        description: The name of the person you are saying hello to.
+        required: true
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include hello.json
+            
